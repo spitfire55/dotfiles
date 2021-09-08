@@ -1,0 +1,1 @@
+/home/spitfire/.dotfiles/vim/vimrc.symlink

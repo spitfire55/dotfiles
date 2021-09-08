@@ -1,0 +1,28 @@
+" Author: Dale Lakes
+
+source ~/.vim/plugin/plugins.vim
+
+set autoread				" Auto reload changed files
+set nowrap				" Don't wrap long lines
+set ttyfast				" Send more chars in fast terminal
+set listchars=extends:→			" Show arrow if line continues right
+set listchars+=precedes:←		" Show arrow if line continues left	 
+set hlsearch				" Highlight search results
+set incsearch				" Show search results as you type
+set showcmd				" Show size of visual selection
+set noerrorbells novisualbell		" Turn off visual and audible bells
+set expandtab shiftwidth=2 tabstop=2	" Two spaces for tabs everywhere
+
+"------------------------------------------------------------------------------
+" Interface
+"------------------------------------------------------------------------------
+set number		" Enable line numbers
+set scrolloff=5		" Leave 5 lines of buffer when scrolling
+set sidescrolloff=10	" Leave 10 chars of horizontal buffer when scrolling
+
+" -----------------------------------------------------------------------------
+" Colors & Formatting
+" -----------------------------------------------------------------------------
+color one
+set background=dark
+syntax on
