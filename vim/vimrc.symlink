@@ -1,7 +1,27 @@
 " Author: Dale Lakes
 
+" plug-vim load
 source ~/.vim/plugin/plugins.vim
+let g:lsc_auto_map = v:true
 
+" Vundle stuff
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'rakr/vim-one'
+Plugin 'ycm-core/YouCompleteMe'
+
+call vundle#end()
+
+filetype plugin indent on
+set encoding=utf-8
+
+" General tweaks
 set autoread				" Auto reload changed files
 set nowrap				" Don't wrap long lines
 set ttyfast				" Send more chars in fast terminal
@@ -13,6 +33,18 @@ set showcmd				" Show size of visual selection
 set noerrorbells novisualbell		" Turn off visual and audible bells
 set expandtab shiftwidth=2 tabstop=2	" Two spaces for tabs everywhere
 
+" Persistent undo
+set undodir=~/.vim/undo/
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" Ignored files/directories from autocomplete (and Ctrl-P)
+set wildignore+=*/tmp/*
+set wildignore+=*.so
+set wildignore+=*.zip
+set wildignore+=*/vendor/bundle/*
+set wildignore+=*/node_modules/
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
@@ -23,6 +55,7 @@ set sidescrolloff=10	" Leave 10 chars of horizontal buffer when scrolling
 " -----------------------------------------------------------------------------
 " Colors & Formatting
 " -----------------------------------------------------------------------------
-color one
-set background=dark
+set termguicolors
+colorscheme one
 syntax on
+set background=dark
