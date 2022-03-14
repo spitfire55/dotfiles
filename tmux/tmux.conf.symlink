@@ -1,0 +1,14 @@
+set -g default-terminal "tmux-256color"
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+set-option -g focus-events on
+set-option -sg escape-time 10
+
+# Start windows and panes at 1.
+set -g base-index 1
+set -g pane-base-index 1
+
+# Ctrl+B h/l to swap windows left/right, i.e. moving the tabs around.
+bind-key h swap-window -t -1\; select-window -t -1
+bind-key l swap-window -t +1\; select-window -t +1
