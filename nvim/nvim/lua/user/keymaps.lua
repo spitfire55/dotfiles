@@ -17,7 +17,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -61,3 +60,24 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)keymap("t", "<C-l>", "<C-\\>
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown())<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- GitSigns Navigation
+keymap('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
+keymap('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+
+-- GitSigns Actions
+keymap('n', '<leader>hs', ':Gitsigns stage_hunk<CR>', opts)
+keymap('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', opts)
+keymap('n', '<leader>hS', ":Gitsigns stage_buffer<CR>", opts)
+keymap('n', '<leader>hu', ":Gitsigns undo_stage_hunk<CR>", opts)
+keymap('n', '<leader>hR', ":Gitsigns reset_buffer<CR>", opts)
+keymap('n', '<leader>hp', ":Gitsigns preview_hunk<CR>", opts)
+keymap('n', '<leader>hb', "<cmd> lua require'gitsigns'.blame_line({full=true})<cr>", opts)
+keymap('n', '<leader>tb', ":Gitsigns toggle_current_line_blame<CR>", opts)
+keymap('n', '<leader>hd', ":Gitsigns diffthis<CR>", opts)
+keymap('n', '<leader>hD', "<cmd> lua require'gitsigns'.diffthis('~')<cr>", opts)
+keymap('n', '<leader>td', ":Gitsigns toggle_deleted<CR>", opts)
+

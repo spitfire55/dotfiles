@@ -86,6 +86,14 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  -- NVimTree
+  use "kyazdani42/nvim-tree.lua"
+  use "kyazdani42/nvim-web-devicons"
+
+  -- Bufferline
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+
   -- Language specific
   use "akinsho/flutter-tools.nvim"
 
