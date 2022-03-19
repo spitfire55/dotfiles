@@ -58,8 +58,9 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown())<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>tp", "<cmd>lua require'telescope.builtin'.find_files({cwd='$HOME/Projects'})<cr>)", opts)
+keymap("n", "<leader>tg", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
@@ -80,4 +81,7 @@ keymap('n', '<leader>tb', ":Gitsigns toggle_current_line_blame<CR>", opts)
 keymap('n', '<leader>hd', ":Gitsigns diffthis<CR>", opts)
 keymap('n', '<leader>hD', "<cmd> lua require'gitsigns'.diffthis('~')<cr>", opts)
 keymap('n', '<leader>td', ":Gitsigns toggle_deleted<CR>", opts)
+
+-- Trouble
+keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
 
