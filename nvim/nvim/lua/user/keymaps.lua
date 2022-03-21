@@ -85,3 +85,5 @@ keymap('n', '<leader>td', ":Gitsigns toggle_deleted<CR>", opts)
 -- Trouble
 keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
 
+-- Null-LS Formatting
+keymap('n', '<leader>ff', ':Format<cr>', opts)
