@@ -29,7 +29,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Delete, not cut
-keymap("n", "dd", "\"_dd", opts)
+keymap("n", "dd", '"_dd', opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -55,7 +55,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", opts)
@@ -66,24 +67,27 @@ keymap("n", "<leader>tg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- GitSigns Navigation
-keymap('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
-keymap('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+keymap("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+keymap("n", "[c", "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
 
 -- GitSigns Actions
-keymap('n', '<leader>hs', ':Gitsigns stage_hunk<CR>', opts)
-keymap('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', opts)
-keymap('n', '<leader>hS', ":Gitsigns stage_buffer<CR>", opts)
-keymap('n', '<leader>hu', ":Gitsigns undo_stage_hunk<CR>", opts)
-keymap('n', '<leader>hR', ":Gitsigns reset_buffer<CR>", opts)
-keymap('n', '<leader>hp', ":Gitsigns preview_hunk<CR>", opts)
-keymap('n', '<leader>hb', "<cmd> lua require'gitsigns'.blame_line({full=true})<cr>", opts)
-keymap('n', '<leader>tb', ":Gitsigns toggle_current_line_blame<CR>", opts)
-keymap('n', '<leader>hd', ":Gitsigns diffthis<CR>", opts)
-keymap('n', '<leader>hD', "<cmd> lua require'gitsigns'.diffthis('~')<cr>", opts)
-keymap('n', '<leader>td', ":Gitsigns toggle_deleted<CR>", opts)
+keymap("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", opts)
+keymap("n", "<leader>hr", ":Gitsigns reset_hunk<CR>", opts)
+keymap("n", "<leader>hS", ":Gitsigns stage_buffer<CR>", opts)
+keymap("n", "<leader>hu", ":Gitsigns undo_stage_hunk<CR>", opts)
+keymap("n", "<leader>hR", ":Gitsigns reset_buffer<CR>", opts)
+keymap("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", opts)
+keymap("n", "<leader>hb", "<cmd> lua require'gitsigns'.blame_line({full=true})<cr>", opts)
+keymap("n", "<leader>tb", ":Gitsigns toggle_current_line_blame<CR>", opts)
+keymap("n", "<leader>hd", ":Gitsigns diffthis<CR>", opts)
+keymap("n", "<leader>hD", "<cmd> lua require'gitsigns'.diffthis('~')<cr>", opts)
+keymap("n", "<leader>td", ":Gitsigns toggle_deleted<CR>", opts)
 
 -- Trouble
-keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
+keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
 
 -- Null-LS Formatting
-keymap('n', '<leader>ff', ':Format<cr>', opts)
+keymap("n", "<leader>ff", ":Format<cr>", opts)
+
+-- Bufferline
+keymap("n", "<leader>cb", ":BufferLinePickClose<cr>", opts)
