@@ -98,6 +98,9 @@ return packer.startup(function(use)
   use("akinsho/bufferline.nvim")
   use("moll/vim-bbye")
 
+  -- Lualine
+  use("nvim-lualine/lualine.nvim")
+
   -- Toggleterm
   use("akinsho/toggleterm.nvim")
 
