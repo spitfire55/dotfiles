@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/spitfire/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -107,16 +107,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-syntax-highlighting for both Linux and Mac install locations
+if [[ -d /usr/local/share/zsh-syntax-highlighting ]]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [[ -d /usr/share/zsh/zsh-syntax-highlighting ]]; then
+  source /usr/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # aliases
 alias vim=nvim
@@ -128,7 +130,21 @@ export NNN_PLUG='p:preview-tui'
 # Custom envt variables
 export GEM_HOME="$HOME/gems"
 export GOPATH="$HOME/go"
-export FLUTTER_ROOT=/opt/flutter/
+
+if [[ -d /opt/flutter ]]; then
+  export FLUTTER_ROOT=/opt/flutter
+fi
+
+if [[ -d $HOME/dev/flutter ]]; then
+  export FLUTTER_ROOT=$HOME/dev/flutter
+fi
 
 # Customize PATH
-export PATH=$PATH:$FLUTTER_ROOT/bin:$FLUTTER_ROOT/bin/cache/dart-sdk/bin:$GEM_HOME/bin:$HOME/.linuxbrew/bin:$HOME/.local/bin:$HOME/Android/Sdk/platform-tools:/opt/node/bin:$HOME/go/bin:$HOME/.pub-cache/bin
+if [[ "$(uname)" == "Linux" ]]; then
+  export PATH=$PATH:$FLUTTER_ROOT/bin:$FLUTTER_ROOT/bin/cache/dart-sdk/bin:$GEM_HOME/bin:$HOME/.linuxbrew/bin:$HOME/.local/bin:$HOME/Android/Sdk/platform-tools:/opt/node/bin:$HOME/go/bin:$HOME/.pub-cache/bin
+fi
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/Library/Python/3.9/bin
+fi
+
