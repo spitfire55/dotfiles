@@ -42,7 +42,10 @@ exec_always --no-startup-id $HOME/.config/i3/polybar/launch.sh
 exec --no-startup-id libinput-gestures-setup start
 
 # Remap Caps to Ctrl
-exec --no-startup-id setxkbmap -option ctrl:nocaps  
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+
+# Faster key repeat
+exec --no-startup-id xset r rate 180 60
 
 # set pop up window min and max sizes
 floating_minimum_size 75 x 50

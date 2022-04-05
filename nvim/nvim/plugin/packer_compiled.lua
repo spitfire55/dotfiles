@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/spitfire/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/spitfire/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/spitfire/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -163,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/spitfire/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-reload"] = {
-    loaded = true,
-    path = "/home/spitfire/.local/share/nvim/site/pack/packer/start/nvim-reload",
-    url = "https://github.com/famiu/nvim-reload"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
