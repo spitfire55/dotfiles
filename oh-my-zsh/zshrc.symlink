@@ -144,6 +144,6 @@ if [[ "$(uname)" == "Linux" ]]; then
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/Library/Python/3.9/bin
+  export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/Library/Python/3.9/bin:$HOME/.pub-cache/bin
 fi
 
