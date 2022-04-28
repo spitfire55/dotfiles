@@ -95,17 +95,14 @@ return packer.startup(function(use)
   use("kyazdani42/nvim-web-devicons")
 
   -- Bufferline
-  use("akinsho/bufferline.nvim")
+  use({ "akinsho/bufferline.nvim", branch = "main" })
   use("moll/vim-bbye")
 
   -- Lualine
   use("nvim-lualine/lualine.nvim")
 
   -- Toggleterm
-  use("akinsho/toggleterm.nvim")
-
-  -- Language specific
-  use("akinsho/flutter-tools.nvim")
+  use({ "akinsho/toggleterm.nvim", branch = "main" })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
