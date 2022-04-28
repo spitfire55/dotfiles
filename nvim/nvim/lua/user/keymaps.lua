@@ -58,7 +58,7 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Telescop --
+-- Telescope --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>tff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>tfp", "<cmd>lua require'telescope.builtin'.find_files({cwd='$HOME/Projects'})<cr>", opts)
