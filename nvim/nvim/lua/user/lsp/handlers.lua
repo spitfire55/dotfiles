@@ -81,17 +81,28 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
+  if client.name == "clangd" then
+    client.resolved_capabilities.document_formatting = false
+  end
   if client.name == "dartls" then
+    client.resolved_capabilities.document_formatting = false
+  end
+  if client.name == "jsonls" then
     client.resolved_capabilities.document_formatting = false
   end
   if client.name == "sumneko_lua" then
     client.resolved_capabilities.document_formatting = false
   end
+  if client.name == "volar" then
+    client.resolved_capabilities.document_formatting = false
+  end
+
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
