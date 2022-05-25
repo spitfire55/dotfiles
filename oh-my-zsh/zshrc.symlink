@@ -129,6 +129,7 @@ export NNN_PLUG='p:preview-tui'
 # Custom envt variables
 export GEM_HOME="$HOME/gems"
 export GOPATH="$HOME/go"
+export NPM_PACKAGES="$HOME/.npm-packages"
 
 if [[ -d /opt/flutter ]]; then
   export FLUTTER_ROOT=/opt/flutter
@@ -138,14 +139,16 @@ if [[ -d $HOME/dev/flutter ]]; then
   export FLUTTER_ROOT=$HOME/dev/flutter
 fi
 
-# Customize PATH
+# OS-specific customization 
 if [[ "$(uname)" == "Linux" ]]; then
   eval "$(ssh-agent >/dev/null)"
   export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
-  export PATH=$PATH:$FLUTTER_ROOT/bin:$FLUTTER_ROOT/bin/cache/dart-sdk/bin:$GEM_HOME/bin:$HOME/.linuxbrew/bin:$HOME/.local/bin:$HOME/Android/Sdk/platform-tools:/opt/node/bin:$HOME/go/bin:$HOME/.pub-cache/bin
+  export PATH=$PATH:$FLUTTER_ROOT/bin:$FLUTTER_ROOT/bin/cache/dart-sdk/bin:$GEM_HOME/bin:$HOME/.linuxbrew/bin:$HOME/.local/bin:$HOME/Android/Sdk/platform-tools:/opt/node/bin:$HOME/go/bin:$HOME/.pub-cache/bin:$NPM_PACKAGES/bin
+  . /opt/asdf-vm/asdf.sh
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/dev/flutter/.pub-cache/bin:$HOME/Library/Python/3.9/bin:$HOME/.pub-cache/bin
+  export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/dev/flutter/.pub-cache/bin:$HOME/Library/Python/3.9/bin:$HOME/.pub-cache/bin:$NPM_PACKAGES/bin
+  . $(brew --prefix asdf)/libexec/asdf.sh
 fi
 

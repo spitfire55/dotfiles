@@ -21,11 +21,6 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
-  if server.name == "volar" then
-    local volar_opts = require("user.lsp.settings.volar")
-    opts = vim.tbl_deep_extend("force", volar_opts, opts)
-  end
-
   -- if server.name == "pyright" then
   --  	local pyright_opts = require("user.lsp.settings.pyright")
   --  	opts = vim.tbl_deep_extend("force", pyright_opts, opts)
