@@ -16,10 +16,9 @@ null_ls.setup({
     formatting.clang_format,
     formatting.dart_format,
     formatting.shfmt,
-    -- formatting.yapf,
     formatting.stylua,
-    diagnostics.flake8,
     formatting.ktlint,
+    diagnostics.flake8,
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then

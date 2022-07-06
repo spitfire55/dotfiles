@@ -47,3 +47,6 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
+
+vim.g.python_host_prog= vim.fn.expand('~/.asdf/shims/python')
+vim.g.python3_host_prog= vim.fn.expand('~/.asdf/shims/python3')

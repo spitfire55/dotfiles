@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use("williamboman/nvim-lsp-installer") --simple to use language server installer
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("jose-elias-alvarez/typescript.nvim") -- for typescript goodness
+  use("akinsho/flutter-tools.nvim")
 
   -- Telescope
   use("nvim-telescope/telescope.nvim")
@@ -96,14 +97,17 @@ return packer.startup(function(use)
   use("kyazdani42/nvim-web-devicons")
 
   -- Bufferline
-  use({ "akinsho/bufferline.nvim", branch = "main" })
+  use("akinsho/bufferline.nvim")
   use("moll/vim-bbye")
 
   -- Lualine
   use("nvim-lualine/lualine.nvim")
 
   -- Toggleterm
-  use({ "akinsho/toggleterm.nvim", branch = "main" })
+  use("akinsho/toggleterm.nvim")
+
+  -- Debugging
+  use("mfussenegger/nvim-dap")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
