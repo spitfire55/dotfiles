@@ -15,7 +15,7 @@ M.setup = function(attach, capabilities)
       open_cmd = "tabe",
     },
     outline = {
-      open_cmd = "50vnew",
+      open_cmd = "44vnew",
       auto_open = true,
     },
     lsp = {
