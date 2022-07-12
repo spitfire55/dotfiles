@@ -77,15 +77,6 @@ local function lsp_keymaps(bufnr)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
-local function flutter_lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true}
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>Fb", "<cmd>FlutterRun<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>Fo", "<cmd>FlutterOutlineToggle<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>Fr", "<cmd>FlutterReload<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>FR", "<cmd>FlutterRestart<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>Fq", "<cmd>FlutterQuit<CR>", opts)
-end
-
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
@@ -94,7 +85,6 @@ M.on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
   if client.name == "dartls" then
-    flutter_lsp_keymaps(bufnr)
     client.resolved_capabilities.document_formatting = false
   end
   if client.name == "jsonls" then
