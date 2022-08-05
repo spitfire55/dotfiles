@@ -11,13 +11,15 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
   debug = true,
   sources = {
-    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.black.with({ extra_args = { "--fast", "--line-length", "80" } }),
     formatting.clang_format,
     formatting.dart_format.with({ extra_args = { "--line-length", "79" } }),
+    formatting.gofumpt,
+    formatting.ktlint,
+    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.shfmt,
     formatting.stylua,
-    formatting.ktlint,
+
     diagnostics.flake8,
   },
   on_attach = function(client)
