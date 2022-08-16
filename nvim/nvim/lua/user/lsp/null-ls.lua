@@ -18,6 +18,7 @@ null_ls.setup({
     formatting.shfmt,
     -- formatting.yapf,
     formatting.stylua,
+    formatting.swiftformat,
     diagnostics.flake8,
     formatting.ktlint,
   },
