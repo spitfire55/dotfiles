@@ -58,7 +58,21 @@ ramp-foreground = ${color.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/volume]
+[module/pipewire]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/pipewire-simple.sh
+interval = 1
+click-right = exec pavucontrol &
+click-left = ~/.config/i3/polybar/scripts/pipewire-simple.sh --mute &
+scroll-up = ~/.confg/i3/polybar/scripts/pipewire-simple.sh --up &
+scroll-down = ~/.config/i3/polybar/scripts/pipewire-simple.sh --down &
+
+format-background = ${color.green}
+format-foreground = ${color.background}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/pulseaudio]
 type = internal/pulseaudio
 
 sink = alsa_output.pci-0000_12_00.3.analog-stereo

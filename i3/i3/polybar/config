@@ -52,7 +52,7 @@ font-3 = "MesloLGS Nerd Font Mono:style=Regular:size=12;3"
 # Default
 modules-left = spacing BLD launcher BRD dot GLD cpu YPL memory CPL filesystem CRD dot MLD network MRD dot RLD bluetooth RRD
 modules-center = LD i3 RD
-modules-right = RLD battery RRD dot GLD volume YPL brightness YRD dot MLD time RPL date RRD spacing
+modules-right = RLD battery RRD dot GLD pipewire YPL brightness YRD dot MLD time RPL date RRD spacing
 
 spacing = 0
 dim-value = 1.0

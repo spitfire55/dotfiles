@@ -11,10 +11,10 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
   debug = true,
   sources = {
-    formatting.black.with({ extra_args = { "--fast", "--line-length", "80" } }),
+    formatting.black.with({ extra_args = { "--fast", "--line-length", "79" } }),
     formatting.clang_format,
     formatting.dart_format.with({ extra_args = { "--line-length", "79" } }),
-    formatting.gofumpt,
+    formatting.golines.with({ extra_args = { "--max-len", "79", "--tab-len", "2" } }),
     formatting.ktlint,
     formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.shfmt,
