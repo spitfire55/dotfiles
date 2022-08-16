@@ -63,9 +63,24 @@ return packer.startup(function(use)
 
   -- LSP
   use("neovim/nvim-lspconfig") -- enable LSP
-  use("williamboman/nvim-lsp-installer") --simple to use language server installer
+  use("williamboman/nvim-lsp-installer")
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("jose-elias-alvarez/typescript.nvim") -- for typescript goodness
+  use("ray-x/lsp_signature.nvim")
+
+  -- Markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      vim.g.mkdp_auto_start = 0
+      vim.g.mkdp_auto_close = 0
+      vim.g.mkdp_browser = "firefox"
+      vim.g.mkdp_theme = "light"
+    end,
+  })
 
   -- Telescope
   use("nvim-telescope/telescope.nvim")
@@ -91,19 +106,28 @@ return packer.startup(function(use)
   -- Git
   use("lewis6991/gitsigns.nvim")
 
-  -- NVimTree
+  -- NvimTree
   use("kyazdani42/nvim-tree.lua")
   use("kyazdani42/nvim-web-devicons")
 
   -- Bufferline
-  use({ "akinsho/bufferline.nvim", branch = "main" })
+  use("akinsho/bufferline.nvim")
   use("moll/vim-bbye")
 
   -- Lualine
   use("nvim-lualine/lualine.nvim")
 
   -- Toggleterm
-  use({ "akinsho/toggleterm.nvim", branch = "main" })
+  use("akinsho/toggleterm.nvim")
+
+  -- Debugging
+  use("mfussenegger/nvim-dap")
+
+  -- Keybindings
+  use("folke/which-key.nvim")
+
+  -- Dart
+  use("dart-lang/dart-vim-plugin")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

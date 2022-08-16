@@ -22,7 +22,7 @@ bottom = false
 fixed-center = true
 
 width = 100%
-height = 38
+height = 20 
 
 offset-x = 0%
 offset-y = 0%
@@ -44,15 +44,15 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Jetbrains Mono Nerd Font:style=Regular:size=24;6"
-font-1 = "Iosevka Nerd Font:size=12;3"
-font-2 = "Iosevka Nerd Font:size=16;4"
-font-3 = "Iosevka Nerd Font:size=18;4"
+font-0 = "MesloLGS Nerd Font Mono:style=Regular:size=12;3"
+font-1 = "MesloLGS Nerd Font Mono:style=Regular:size=16;3"
+font-2 = "MesloLGS Nerd Font Mono:style=Regular:size=16;3"
+font-3 = "MesloLGS Nerd Font Mono:style=Regular:size=12;3"
 
 # Default
 modules-left = spacing BLD launcher BRD dot GLD cpu YPL memory CPL filesystem CRD dot MLD network MRD dot RLD bluetooth RRD
 modules-center = LD i3 RD
-modules-right = RLD battery RRD dot GLD volume YPL brightness YRD dot MLD time RPL date RRD spacing
+modules-right = RLD battery RRD dot GLD pipewire YPL brightness YRD dot MLD time RPL date RRD spacing
 
 spacing = 0
 dim-value = 1.0

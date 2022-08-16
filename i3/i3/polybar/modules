@@ -58,7 +58,21 @@ ramp-foreground = ${color.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/volume]
+[module/pipewire]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/pipewire-simple.sh
+interval = 1
+click-right = exec pavucontrol &
+click-left = ~/.config/i3/polybar/scripts/pipewire-simple.sh --mute &
+scroll-up = ~/.confg/i3/polybar/scripts/pipewire-simple.sh --up &
+scroll-down = ~/.config/i3/polybar/scripts/pipewire-simple.sh --down &
+
+format-background = ${color.green}
+format-foreground = ${color.background}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/pulseaudio]
 type = internal/pulseaudio
 
 sink = alsa_output.pci-0000_12_00.3.analog-stereo
@@ -137,20 +151,20 @@ label-charging-foreground = ${color.background}
 label-discharging-foreground = ${color.background}
 label-full-foreground = ${color.background}
 
-ramp-capacity-0 = "  "
-ramp-capacity-1 = "  "
-ramp-capacity-2 = "  "
-ramp-capacity-3 = "  "
-ramp-capacity-4 = "  "
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 ramp-capacity-font = 1
 ramp-capacity-foreground = ${color.background}
 ramp-capacity-background = ${color.red}
 
-animation-charging-0 = "  "
-animation-charging-1 = "  "
-animation-charging-2 = "  "
-animation-charging-3 = "  "
-animation-charging-4 = "  "
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+animation-charging-4 = " "
 animation-charging-font = 1
 animation-charging-foreground = ${color.background}
 animation-charging-background = ${color.red}
@@ -179,6 +193,7 @@ ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;漣
+ws-icon-font = 2 
 format = <label-state><label-mode>
 format-background = ${color.altblack}
 
@@ -203,7 +218,7 @@ label-urgent = %icon%
 label-urgent-foreground = ${color.red}
 label-urgent-background = ${color.altblack}
 
-label-focused-padding = 1
+label-focused-padding = 1 
 label-unfocused-padding = 1
 label-visible-padding = 1
 label-urgent-padding = 1
@@ -218,7 +233,7 @@ label-urgent-padding = 1
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-padding = 0
 format-prefix-foreground = ${color.background}
 format-foreground = ${color.background}
@@ -260,7 +275,7 @@ interval = 30
 fixed-values = true
 
 format-mounted = <label-mounted>
-format-mounted-prefix = " "
+format-mounted-prefix = ""
 format-mounted-prefix-foreground = ${color.background}
 format-mounted-prefix-background = ${color.cyan}
 
@@ -284,7 +299,7 @@ type = internal/memory
 interval = 1
 
 format = <label>
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${color.background}
 format-foreground = ${color.background}
 format-background = ${color.yellow}
@@ -322,7 +337,7 @@ unknown-as-up = true
 format-connected = <ramp-signal><label-connected>
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = "睊 "
+format-disconnected-prefix = "睊"
 format-disconnected-prefix-font = 2
 format-disconnected-foreground = ${color.background}
 format-disconnected-background = ${color.magenta}
@@ -336,11 +351,11 @@ label-disconnected-foreground = ${color.background}
 label-connected-background = ${color.magenta}
 label-disconnected-background = ${color.magenta}
 
-ramp-signal-0 = " "
-ramp-signal-1 = " "
-ramp-signal-2 = " "
-ramp-signal-3 = " "
-ramp-signal-4 = " "
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
 ramp-signal-foreground = ${color.background}
 ramp-signal-background = ${color.magenta}
 ramp-signal-font = 1
