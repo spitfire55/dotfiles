@@ -137,8 +137,8 @@ $HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/emulator:\
 fi
 
 if [[ "$(uname -a)" == *"arch"* ]]; then
+  export CHROME_EXECUTABLE="/usr/bin/brave"
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
