@@ -142,7 +142,8 @@ if [[ "$(uname -a)" == *"arch"* ]]; then
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   export FLUTTER_ROOT=$HOME/dev/flutter
   export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/dev/flutter/.pub-cache/bin:\
 $HOME/Library/Python/3.9/bin:$HOME/.pub-cache/bin:$NPM_PACKAGES/bin
