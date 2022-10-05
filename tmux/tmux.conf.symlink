@@ -39,3 +39,10 @@ bind-key b split-window -v -c "#{pane_current_path}"
 
 # Open new windows in working directory
 bind c new-window -c "#{pane_current_path}"
+
+# Set pwd as pane name
+set -g status-interval 1
+set-window-option -g window-status-separator ""
+set-window-option -g window-status-current-format " *#{b:pane_current_path} "
+set-window-option -g window-status-format " #{b:pane_current_path} "
+
