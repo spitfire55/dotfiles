@@ -43,7 +43,7 @@ return packer.startup(function(use)
   -- My plugins here
   use("wbthomason/packer.nvim") -- Have packer manage itself
   use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+  use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
   -- colorscheme plugin
   use("shaunsingh/nord.nvim") -- Nord color scheme
@@ -63,7 +63,8 @@ return packer.startup(function(use)
 
   -- LSP
   use("neovim/nvim-lspconfig") -- enable LSP
-  use("williamboman/nvim-lsp-installer")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("jose-elias-alvarez/typescript.nvim") -- for typescript goodness
   use("ray-x/lsp_signature.nvim")
@@ -128,6 +129,25 @@ return packer.startup(function(use)
 
   -- Dart
   use("dart-lang/dart-vim-plugin")
+
+  -- GitHub Copilot
+  use({
+    "zbirenbaum/copilot.lua",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end, 100)
+    end,
+  })
+
+  use({
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
