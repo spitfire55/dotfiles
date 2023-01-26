@@ -146,7 +146,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   export FLUTTER_ROOT=$HOME/dev/flutter
   export PATH=$PATH:$HOME/dev/flutter/bin:$HOME/dev/flutter/.pub-cache/bin:\
-$HOME/.pub-cache/bin:$NPM_PACKAGES/bin
+$HOME/.pub-cache/bin:$NPM_PACKAGES/bin:$HOME/gems/bin:$HOME/.local/bin
 
   . $(brew --prefix asdf)/libexec/asdf.sh
 fi

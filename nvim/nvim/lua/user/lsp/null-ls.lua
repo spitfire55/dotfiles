@@ -13,11 +13,11 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   debug = true,
   sources = {
-    formatting.black.with({ extra_args = { "--fast", "--line-length", "79" } }),
+    formatting.black.with({ extra_args = { "--fast" } }),
     formatting.clang_format,
-    formatting.dart_format.with({ extra_args = { "--line-length", "79" } }),
-    formatting.eslint,
-    formatting.golines.with({ extra_args = { "--max-len", "79", "--tab-len", "2" } }),
+    formatting.dart_format,
+    --[[ formatting.eslint_d, ]]
+    formatting.golines.with({ extra_args = { "--tab-len", "2" } }),
     formatting.ktlint,
     formatting.prettier,
     formatting.shfmt,

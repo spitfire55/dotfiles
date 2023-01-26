@@ -47,6 +47,7 @@ return packer.startup(function(use)
 
   -- colorscheme plugin
   use("shaunsingh/nord.nvim") -- Nord color scheme
+  use("Mofiqul/dracula.nvim") -- Dracula color scheme
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -129,6 +130,9 @@ return packer.startup(function(use)
 
   -- Dart
   use("dart-lang/dart-vim-plugin")
+
+  -- Fastlane
+  use("bifrostyyy/vim-fastlane")
 
   -- GitHub Copilot
   use({

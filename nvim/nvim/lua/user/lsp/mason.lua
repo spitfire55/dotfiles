@@ -1,9 +1,9 @@
 local servers = {
-  "sumneko_lua",
-  "tsserver",
-  "pyright",
   "bashls",
   "jsonls",
+  "pyright",
+  "sumneko_lua",
+  "tsserver",
 }
 
 local settings = {
@@ -30,14 +30,12 @@ if not lspconfig_status_ok then
   return
 end
 
-local opts = {}
+local opts = {
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
 
 for _, server in pairs(servers) do
-  opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
-  }
-
   server = vim.split(server, "@")[1]
 
   local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
@@ -48,8 +46,4 @@ for _, server in pairs(servers) do
   lspconfig[server].setup(opts)
 end
 
-local opts = {
-  on_attach = require("user.lsp.handlers").on_attach,
-  capabilities = require("user.lsp.handlers").capabilities,
-}
 lspconfig.dartls.setup(opts)
