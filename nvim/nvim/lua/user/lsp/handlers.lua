@@ -94,9 +94,9 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
   end
-  if client.name == "clangd" then
-    client.server_capabilities.document_formatting = false
-  end
+  --[[ if client.name == "clangd" then ]]
+  --[[   client.server_capabilities.document_formatting = false ]]
+  --[[ end ]]
   if client.name == "dartls" then
     client.server_capabilities.document_formatting = false
   end
@@ -117,9 +117,7 @@ M.on_attach = function(client, bufnr)
   lsp_highlight_document(client)
   lsp_signature()
 end
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.offsetEncoding = { "utf-16" }
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then

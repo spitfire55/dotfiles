@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+  use("jay-babu/mason-null-ls.nvim") -- bring Mason and null-ls together
   use("jose-elias-alvarez/typescript.nvim") -- for typescript goodness
   use("ray-x/lsp_signature.nvim")
 
@@ -109,7 +110,7 @@ return packer.startup(function(use)
   use("lewis6991/gitsigns.nvim")
 
   -- NvimTree
-  use("kyazdani42/nvim-tree.lua")
+  use({ "kyazdani42/nvim-tree.lua", commit = "8b8d457" })
   use("kyazdani42/nvim-web-devicons")
 
   -- Bufferline
@@ -130,6 +131,8 @@ return packer.startup(function(use)
 
   -- Dart
   use("dart-lang/dart-vim-plugin")
+  use("Neevash/awesome-flutter-snippets")
+  use("RobertBrunhage/flutter-riverpod-snippets")
 
   -- Fastlane
   use("bifrostyyy/vim-fastlane")
@@ -152,6 +155,9 @@ return packer.startup(function(use)
       require("copilot_cmp").setup()
     end,
   })
+
+  -- Tmux
+  use("christoomey/vim-tmux-navigator")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

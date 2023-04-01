@@ -14,7 +14,7 @@ null_ls.setup({
   debug = true,
   sources = {
     formatting.black.with({ extra_args = { "--fast" } }),
-    formatting.clang_format,
+    formatting.clang_format.with({ extra_args = { "-style=file:/Users/dalelakes/.config/.clang-format" } }),
     formatting.dart_format,
     --[[ formatting.eslint_d, ]]
     formatting.golines.with({ extra_args = { "--tab-len", "2" } }),

@@ -38,7 +38,7 @@ nvim_tree.setup({
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 50,
     hide_root_folder = false,
     side = "left",
     mappings = {
@@ -51,6 +51,12 @@ nvim_tree.setup({
     },
     number = false,
     relativenumber = false,
+  },
+  filters = {
+    custom = {
+      "_generated",
+      ".DS_Store",
+    },
   },
   renderer = {
     icons = {
