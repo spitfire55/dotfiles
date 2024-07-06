@@ -16,10 +16,11 @@ null_ls.setup({
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.clang_format.with({ extra_args = { "-style=file:/Users/dalelakes/.config/.clang-format" } }),
     formatting.dart_format,
-    --[[ formatting.eslint_d, ]]
+    formatting.eslint_d,
     formatting.golines.with({ extra_args = { "--tab-len", "2" } }),
     formatting.ktlint,
-    formatting.prettier,
+    formatting.jq,
+    --[[ formatting.prettier, ]]
     formatting.shfmt,
     formatting.stylua,
     formatting.swiftformat,

@@ -1,5 +1,7 @@
 set -g default-terminal "screen-256color"
 set-option -sa terminal-overrides ",xterm-kitty:RGB"
+set-option -sa terminal-features ',xterm-kitty:RGB'
+set-option -sa terminal-overrides ",xterm*:Tc"
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
@@ -7,6 +9,12 @@ set -s focus-events on
 set -sg escape-time 10
 set -g automatic-rename
 set -g mouse on
+
+set -g pane-border-status top
+set -g pane-border-format "#{?pane_title,#P: #{pane_title},#P: #{pane_current_command}}"
+bind-key t command-prompt -p "Pane title:" "select-pane -T '%%'"
+# Unset pane title (reset to default)
+bind-key u select-pane -T ""
 
 unbind r 
 bind r source ~/.tmux.conf
@@ -24,6 +32,7 @@ bind-key j select-pane -D # Similar to 'C-w j' to navigate windows in Vim
 bind-key k select-pane -U
 bind-key h select-pane -L
 bind-key l select-pane -R
+
 
 # Start windows and panes at 1.
 set -g base-index 1
@@ -49,11 +58,18 @@ set-window-option -g window-status-separator ""
 set-window-option -g window-status-current-format " *#{b:pane_current_path} "
 set-window-option -g window-status-format " #{b:pane_current_path} "
 
+# Allow passthrough
+set-option -g allow-passthrough on
+
+# Get rid of empty quotes next to timestamp
+set-option -g status-right "%H:%M:%S %d-%b-%y"
+
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
-set -g @plugin "arcticicestudio/nord-tmux"
+# set -g @plugin "arcticicestudio/nord-tmux"
+set -g @plugin 'catppuccin/tmux'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -63,3 +79,4 @@ set -g @plugin "arcticicestudio/nord-tmux"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
+

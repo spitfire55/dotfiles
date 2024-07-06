@@ -70,6 +70,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+  tmux
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,8 +105,21 @@ source $ZSH/oh-my-zsh.sh
 # Disable beep noises
 unsetopt BEEP
 
+
 # aliases
 alias vim=nvim
+alias python=python3
+alias cat=bat
+alias ls='exa --color=always --icons --group-directories-first'
+alias la='exa -a --color=always --icons --group-directories-first'
+alias ll='exa -l --color=always --icons --group-directories-first'
+alias lal='exa -al --color=always --icons --group-directories-first'
+alias lt='exa -aT --color=always --icons --group-directories-first'
+
+# Tmux pane naming
+if [ -n "$TMUX" ]; then
+  tmux select-pane -T ""
+fi
 
 # nnn options
 export NNN_FIFO="/tmp/nnn.fifo"
@@ -114,8 +129,9 @@ export NNN_PLUG='p:preview-tui'
 export GEM_HOME="$HOME/gems"
 export GOPATH="$HOME/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
+export OPENAI_API_KEY="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"
 
-# OS-specific customization 
+# OS-specific customization
 if [[ "$(uname)" == "Linux" ]]; then
   export FLUTTER_ROOT=$HOME/flutter
   export PATH=$PATH:$FLUTTER_ROOT/bin:$FLUTTER_ROOT/bin/cache/dart-sdk/bin:\
@@ -132,13 +148,39 @@ if [[ "$(uname -a)" == *"arch"* ]]; then
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  export FLUTTER_ROOT=$HOME/dev/flutter
-  export PATH=$PATH:$HOME/.pub-cache/bin:$NPM_PACKAGES/bin:$HOME/gems/bin:$HOME/.local/bin
-  export C_INCLUDE_PATH=/opt/local/include:/opt/homebrew/include
 
   . $(brew --prefix asdf)/libexec/asdf.sh
+
+  export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+  export FLUTTER_ROOT="$HOME/dev/flutter"
+  export PATH="$(brew --prefix)/opt/ccache/libexec":$FLUTTER_ROOT/bin:$HOME/.local/bin:$HOME/.pub-cache/bin:$NPM_PACKAGES/bin:$HOME/gems/bin:$GOPATH/bin:$PATH
+  export C_INCLUDE_PATH=/opt/local/include:/opt/homebrew/include
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export DENO_INSTALL="/Users/dalelakes/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+  export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+  
+  # Homebrew completions
+  if type brew &>/dev/null
+  then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+    autoload -Uz compinit
+    compinit
+  fi
+  
+  # bump max file limit (default is 256)
+  ulimit -S -n 2048
+
+
 fi
 
 eval "$(starship init zsh)"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/dalelakes/.dart-cli-completion/zsh-config.zsh ]] && . /Users/dalelakes/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export PATH="/Users/dalelakes/.shorebird/bin:$PATH"
+export PATROL_FINDERS=no
