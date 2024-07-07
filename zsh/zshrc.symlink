@@ -129,7 +129,6 @@ export NNN_PLUG='p:preview-tui'
 export GEM_HOME="$HOME/gems"
 export GOPATH="$HOME/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
-export OPENAI_API_KEY="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"
 
 # OS-specific customization
 if [[ "$(uname)" == "Linux" ]]; then
