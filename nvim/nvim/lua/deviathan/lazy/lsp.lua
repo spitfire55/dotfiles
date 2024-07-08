@@ -58,13 +58,11 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "clangd",
           "denols",
           "eslint",
           "html",
           "jsonls",
           "gopls",
-          "kotlin_language_server",
           "lua_ls",
           "marksman",
           "ruff",
@@ -110,17 +108,25 @@ return {
           end,
         },
       })
-      lspconfig.sourcekit.setup({})
+      lspconfig.clangd.setup {
+        capabilities = cmp_lsp.default_capabilities(),
+      }
 
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
       local luasnip = require("luasnip")
 
       cmp.setup({
         formatting = {
+          expandable_indicator = true,
+          fields = {
+            "abbr",
+            "kind",
+            "menu",
+          },
           format = lspkind.cmp_format({
             mode = "symbol_text",
             maxwidth = 50,
-            ellipsis_chat = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            ellipsis_chat = "...",    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
             show_labelDetails = true, -- show labelDetails in menu. Disabled by default
           }),
         },

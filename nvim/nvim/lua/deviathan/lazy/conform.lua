@@ -19,6 +19,7 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       bash = { "shfmt" },
+      cpp = { "clang-format" },
       go = { { "gofmt", "goimports" } },
       lua = { "stylua" },
       python = { "isort", "black" },
