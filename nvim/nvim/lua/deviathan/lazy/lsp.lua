@@ -67,6 +67,7 @@ return {
           "marksman",
           "ruff",
           "tsserver",
+          "zls",
         },
         handlers = {
           function(server_name)
@@ -109,7 +110,12 @@ return {
         },
       })
       lspconfig.clangd.setup {
-        capabilities = cmp_lsp.default_capabilities(),
+        capabilities = capabilities,
+      }
+
+      lspconfig.zls.setup {
+        cmd = { '/home/dlakes/.local/share/nvim/mason/bin/zls' },
+        capabilities = capabilities,
       }
 
       local cmp_select = { behavior = cmp.SelectBehavior.Select }

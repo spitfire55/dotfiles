@@ -142,7 +142,7 @@ export NPM_PACKAGES="$HOME/.npm-packages"
 # OS-specific customization
 if [[ "$(uname)" == "Linux" ]]; then
 
-  export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin
+  export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:$HOME/gems/bin
 
 fi
 

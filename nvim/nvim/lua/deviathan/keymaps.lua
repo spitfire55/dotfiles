@@ -24,12 +24,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Alternative versions of delete, yank, and paste better
-vim.keymap.set({ "n", "v" }, "<leader>dd", [["_dd]]) -- delete, don't cut
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- delete, don't cut
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- yank into system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]]) -- yank into system clipboard
-
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)

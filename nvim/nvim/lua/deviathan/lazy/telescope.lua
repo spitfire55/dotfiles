@@ -28,11 +28,6 @@ return {
       "<cmd>Telescope command_history<cr>",
       desc = "Command History",
     },
-    {
-      "<leader>fb",
-      "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
-      desc = "Buffers",
-    },
   },
   config = function()
     require("telescope").load_extension("glyph")
