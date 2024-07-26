@@ -59,7 +59,7 @@ set-window-option -g window-status-current-format " *#{b:pane_current_path} "
 set-window-option -g window-status-format " #{b:pane_current_path} "
 
 # Allow passthrough
-set-option -g allow-passthrough all
+set-option -gq allow-passthrough on
 
 # Get rid of empty quotes next to timestamp
 set-option -g status-right "%H:%M:%S %d-%b-%y"
