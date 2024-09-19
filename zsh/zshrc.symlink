@@ -130,56 +130,12 @@ if [ -n "$TMUX" ]; then
   tmux select-pane -T ""
 fi
 
-# nnn options
-export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_PLUG='p:preview-tui'
-
 # Custom envt variables
 export GEM_HOME="$HOME/gems"
 export GOPATH="$HOME/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
 
-# OS-specific customization
-if [[ "$(uname)" == "Linux" ]]; then
-
-  export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin
-    # $HOME/gems/bin
-
-  # alias logout=$(sudo killall -u $USER -TERM)
-
-fi
-
-if [[ "$(uname)" == "Darwin" ]]; then
-
-  . $(brew --prefix asdf)/libexec/asdf.sh
-  export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-  export FLUTTER_ROOT=$HOME/dev/flutter
-  export PATH=$PATH:"$(brew --prefix)/opt/ccache/libexec":$FLUTTER_ROOT/bin:$HOME/.local/bin:$HOME/.pub-cache/bin:$HOME/gems/bin:$GOPATH/bin
-  export C_INCLUDE_PATH=/opt/local/include:/opt/homebrew/include
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-  export DENO_INSTALL="/Users/dalelakes/.deno"
-  export PATH=$DENO_INSTALL/bin:$PATH
-  export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
-  
-  # Homebrew completions
-  if type brew &>/dev/null
-  then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-    autoload -Uz compinit
-    compinit
-  fi
-  
-  # bump max file limit (default is 256)
-  ulimit -S -n 2048
-
-
-fi
-
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/dalelakes/.dart-cli-completion/zsh-config.zsh ]] && . /Users/dalelakes/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
+export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:/opt/nvim-linux64/bin:/opt/helix
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

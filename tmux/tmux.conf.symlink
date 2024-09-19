@@ -1,7 +1,6 @@
-set -g default-terminal "screen-256color"
-set-option -sa terminal-overrides ",xterm-kitty:RGB"
-set-option -sa terminal-features ',xterm-kitty:RGB'
-set-option -sa terminal-overrides ",xterm*:Tc"
+set -g default-terminal "tmux-256color"
+set-option -g default-shell /bin/zsh
+set-option -a terminal-features 'xterm-256color:RGB'
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
@@ -45,7 +44,7 @@ bind-key L swap-window -t +1\; select-window -t +1
 # When we add/remove windows, renumber them in sequential order.
 set -g renumber-windows on
 
-# Split panes using | and -
+# Split panes using v and b
 bind-key v split-window -h -c "#{pane_current_path}"
 bind-key b split-window -v -c "#{pane_current_path}"
 
@@ -69,7 +68,11 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 # set -g @plugin "arcticicestudio/nord-tmux"
-set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'catppuccin/tmux#latest'
+set -g @catppuccin_flavor 'mocha'
+set -g pane-active-border-style "bg=default,fg=magenta"
+set -g pane-border-style "fg=magenta"
+set -g status-style "fg=black,bg=magenta"
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
