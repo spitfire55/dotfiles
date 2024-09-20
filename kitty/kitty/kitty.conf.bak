@@ -2,8 +2,8 @@
 
 #: Fonts {{{
 
-font_family MesloLGS Nerd Font Mono
-font_size 14.0
+font_family BerkeleyMono Nerd Font
+font_size 12.0
 
 #: }}}
 #: Cursor customization {{{
@@ -84,6 +84,6 @@ listen_on unix:/tmp/kitty
 
 
 # BEGIN_KITTY_THEME
-# Dimmed Monokai
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
