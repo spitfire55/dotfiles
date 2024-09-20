@@ -68,11 +68,9 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 # set -g @plugin "arcticicestudio/nord-tmux"
-set -g @plugin 'catppuccin/tmux#latest'
-set -g @catppuccin_flavor 'mocha'
-set -g pane-active-border-style "bg=default,fg=magenta"
-set -g pane-border-style "fg=magenta"
-set -g status-style "fg=black,bg=magenta"
+set -g pane-active-border-style "bg=default,fg=white"
+set -g pane-border-style "fg=white"
+set -g status-style "fg=#7e9cd8,bg=#2a2a37"
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'

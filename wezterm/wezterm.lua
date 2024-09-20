@@ -1,15 +1,11 @@
 local wezterm = require("wezterm")
 
-local kanagawa = wezterm.color.get_builtin_schemes()["Kanagawa (Gogh)"]
-
 local config = {
 	default_prog = { "/usr/bin/zsh" },
-	window_background_opacity = 0.625,
-	color_schemes = {
-		["My Kanagawa"] = kanagawa,
-	},
+	window_background_opacity = 0.67,
+	font = wezterm.font("BerkeleyMono Nerd Font"),
 
-	color_scheme = "My Kanagawa",
+	color_scheme = "Kanagawa (Gogh)",
 
 	enable_tab_bar = false,
 	window_frame = {
@@ -17,12 +13,12 @@ local config = {
 		active_titlebar_fg = "#c8c093",
 		button_bg = "#1f1f28",
 		button_fg = "#c8c093",
-		font = require("wezterm").font("Ubuntu Sans"),
+		font = wezterm.font("BerkeleyMono Nerd Font"),
 	},
 	force_reverse_video_cursor = true,
 	colors = {
 		foreground = "#dcd7ba",
-		background = "#1f1f28",
+		background = "#30181c",
 
 		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",
