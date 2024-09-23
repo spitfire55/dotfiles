@@ -2,7 +2,9 @@ local wezterm = require("wezterm")
 
 local config = {
 	default_prog = { "/usr/bin/zsh" },
-	window_background_opacity = 0.67,
+
+	window_background_opacity = 0.75,
+
 	font = wezterm.font("BerkeleyMono Nerd Font"),
 
 	color_scheme = "Kanagawa (Gogh)",
@@ -18,7 +20,7 @@ local config = {
 	force_reverse_video_cursor = true,
 	colors = {
 		foreground = "#dcd7ba",
-		background = "#30181c",
+		background = "#23141d",
 
 		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",

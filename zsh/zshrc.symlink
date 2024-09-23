@@ -77,6 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   asdf
+  fzf
   git
   tmux
   zsh-autosuggestions
@@ -124,6 +125,9 @@ alias la='eza -a --color=always --icons --group-directories-first'
 alias ll='eza -l --color=always --icons --group-directories-first'
 alias lal='eza -al --color=always --icons --group-directories-first'
 alias lt='eza -aT --color=always --icons --group-directories-first'
+
+# Zoxide (better cd)
+eval "$(zoxide init zsh)"
 
 # Tmux pane naming
 if [ -n "$TMUX" ]; then
