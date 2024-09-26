@@ -15,7 +15,6 @@ local config = {
 		active_titlebar_fg = "#c8c093",
 		button_bg = "#1f1f28",
 		button_fg = "#c8c093",
-		font = wezterm.font("BerkeleyMono Nerd Font"),
 	},
 	force_reverse_video_cursor = true,
 	colors = {
