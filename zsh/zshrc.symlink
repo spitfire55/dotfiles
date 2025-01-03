@@ -2,6 +2,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ "$(uname)" == "Darwin" ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -43,6 +48,10 @@ export GOPATH="$HOME/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
 
 export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin
+
+if [[ "$(uname)" == "Darwin" ]]; then
+	export PATH=$PATH:/opt/homebrew/bin:$HOME/dev/lua5.1/bin
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
