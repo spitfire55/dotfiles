@@ -49,6 +49,9 @@ export NPM_PACKAGES="$HOME/.npm-packages"
 
 export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin
 
+# Sets GOROOT
+ . ~/.asdf/plugins/golang/set-env.zsh
+
 if [[ "$(uname)" == "Darwin" ]]; then
 	export PATH=$PATH:/opt/homebrew/bin:$HOME/dev/lua5.1/bin
 fi

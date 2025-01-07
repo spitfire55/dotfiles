@@ -7,4 +7,4 @@ opt.wrap = true
 opt.breakindent = true
 opt.showbreak = "⮡ "
 opt.conceallevel = 0
-opt.colorcolumn = "80"
+opt.colorcolumn = "100"
