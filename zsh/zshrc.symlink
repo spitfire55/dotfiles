@@ -46,6 +46,7 @@ fi
 export GEM_HOME="$HOME/gems"
 export GOPATH="$HOME/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
+export BAT_THEME="kanagawa"
 
 export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin
 
