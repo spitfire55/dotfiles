@@ -57,6 +57,20 @@ set-window-option -g window-status-separator ""
 set-window-option -g window-status-current-format " *#{b:pane_current_path} "
 set-window-option -g window-status-format " #{b:pane_current_path} "
 
+# SSH splitting
+set-option -g @ssh-split-keep-cwd "true"
+set-option -g @ssh-split-keep-remote-cwd "true"
+set-option -g @ssh-split-fail "false"
+set-option -g @ssh-split-no-env "false"
+set-option -g @ssh-split-no-shell "false"
+set-option -g @ssh-split-strip-cmd "true"
+set-option -g @ssh-split-verbose "true"
+set-option -g @ssh-split-debug "false"
+set-option -g @ssh-split-h-key "v"
+set-option -g @ssh-split-v-key "b"
+
+set -g @plugin 'pschmitt/tmux-ssh-split'
+
 # Allow passthrough
 set-option -gq allow-passthrough on
 
@@ -67,6 +81,10 @@ set-option -g status-right "%H:%M:%S %d-%b-%y"
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'pschmitt/tmux-ssh-split'
+
+if "test ! -d ~/.tmux/plugins/tpm" \
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'

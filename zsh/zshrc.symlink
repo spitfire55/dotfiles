@@ -34,6 +34,8 @@ alias ll='eza -l --color=always --group-directories-first'
 alias lal='eza -al --color=always --group-directories-first'
 alias lt='eza -aT --color=always --group-directories-first'
 
+alias wezterm='flatpak run org.wezfurlong.wezterm'
+
 # Zoxide (better cd)
 eval "$(zoxide init zsh)"
 
@@ -48,7 +50,7 @@ export GOPATH="$HOME/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
 export BAT_THEME="kanagawa"
 
-export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin:/opt/nvim/bin:/opt/zig
 
 # Sets GOROOT
  . ~/.asdf/plugins/golang/set-env.zsh

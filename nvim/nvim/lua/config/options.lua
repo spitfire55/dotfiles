@@ -5,6 +5,7 @@ local opt = vim.opt
 
 opt.wrap = true
 opt.breakindent = true
-opt.showbreak = "⮡ "
+opt.showbreak = "↳ "
 opt.conceallevel = 0
 opt.colorcolumn = "100"
+vim.g.root_spec = { "cwd" }
