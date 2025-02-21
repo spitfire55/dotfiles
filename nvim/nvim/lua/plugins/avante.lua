@@ -98,7 +98,6 @@ return {
         -- with blink.compat
         compat = { "avante_commands", "avante_mentions", "avante_files" },
         default = { "lsp", "path", "snippets", "buffer" },
-        cmdline = {},
         providers = {
           avante_commands = {
             name = "avante_commands",
