@@ -1,3 +1,4 @@
-theme = "Kanagawa Wave"
+theme = "kanagawabones"
+background = #000000
 font-family = "BerkeleyMono Nerd Font"
-font-size = 12
+font-size = 16
