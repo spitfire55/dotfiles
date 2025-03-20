@@ -69,8 +69,6 @@ set-option -g @ssh-split-debug "false"
 set-option -g @ssh-split-h-key "v"
 set-option -g @ssh-split-v-key "b"
 
-set -g @plugin 'pschmitt/tmux-ssh-split'
-
 # Allow passthrough
 set-option -gq allow-passthrough on
 
