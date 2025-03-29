@@ -21,9 +21,9 @@ bind r source ~/.tmux.conf
 # vim keybindings and other vim-like actions
 setw -g mode-keys vi
 bind -T copy-mode-vi v send -X begin-selection
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -in"
 bind P paste-buffer
-bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "wl-copy"
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -in"
 # bind-key -t vi-copy y copy-pipe "pbcopy"
 
 # Window movement via hjkl
@@ -53,9 +53,9 @@ bind c new-window -c "#{pane_current_path}"
 
 # Set pwd as pane name
 set -g status-interval 1
-set-window-option -g window-status-separator ""
-set-window-option -g window-status-current-format " *#{b:pane_current_path} "
-set-window-option -g window-status-format " #{b:pane_current_path} "
+set-window-option -g automatic-rename on
+set-window-option -g automatic-rename-format "#{b:pane_current_path}"
+set-option -g allow-rename off
 
 # SSH splitting
 set-option -g @ssh-split-keep-cwd "true"
