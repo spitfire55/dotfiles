@@ -55,7 +55,7 @@ export BAT_THEME="kanagawa"
  export PATH=$PATH:$HOME/.local/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin:/opt/nvim/bin:/opt/zig:$GOBIN
 
 if [[ "$(uname)" == "Darwin" ]]; then
-	export PATH=$PATH:/opt/homebrew/bin:$HOME/dev/lua5.1/bin
+	export PATH=$PATH:/opt/homebrew/bin:$HOME/dev/lua5.1/bin:/opt/homebrew/opt/llvm/bin
 fi
 
 if [[ "$(uname)" == "Linux" ]]; then
