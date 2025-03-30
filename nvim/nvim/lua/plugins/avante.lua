@@ -6,6 +6,24 @@ return {
       "stevearc/dressing.nvim",
     },
     opts = function(_, opts)
+      local os = vim.loop.os_uname().sysname
+      -- Check if running on macOS
+      if os == "Darwin" then
+        opts.provider = "lmstudio"
+        opts.vendors = {
+          lmstudio = {
+            __inherited_from = "openai",
+            api_key_name = "",
+            endpoint = "http://127.0.0.1:1234/v1",
+            model = "qwen2.5-coder-32b-instruct",
+          },
+        }
+        -- elseif os == "Linux" then
+      end
+
+      opts.windows = {
+        width = 35,
+      }
       -- Default configuration
       opts.hints = { enabled = false }
 
@@ -45,7 +63,7 @@ return {
         "avante_files",
       }
     end,
-    build = LazyVim.is_win() and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or "make",
+    build = "make",
   },
   {
     "stevearc/dressing.nvim",
