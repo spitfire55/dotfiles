@@ -1,4 +1,5 @@
 theme = "kanagawabones"
 background = #000000
 font-family = "BerkeleyMono Nerd Font"
-font-size = 16
+
+config-file = ?/home/dlakes/.config/ghostty-linux.conf

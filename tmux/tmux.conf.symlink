@@ -1,13 +1,14 @@
+set -g default-command "${SHELL}"
 set -g default-terminal "tmux-256color"
 set-option -g default-shell /bin/zsh
-set-option -a terminal-features 'xterm-256color:RGB'
 unbind C-b
-set-option -g prefix C-a
+set-option -g prefix C-\
 bind-key C-a send-prefix
 set -s focus-events on
 set -sg escape-time 10
 set -g automatic-rename
 set -g mouse on
+set -s set-clipboard on
 
 set -g pane-border-status top
 set -g pane-border-format " #{?pane_title,#P: #{pane_title},#P: #{pane_current_command}} "

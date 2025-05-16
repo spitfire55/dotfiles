@@ -1,3 +1,7 @@
+if [[ -z ${TMUX+X}${ZSH_SCRIPT+X}${ZSH_EXECUTION_STRING+X} && -v commands[tmux] ]]; then
+  exec tmux
+fi
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -16,6 +20,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+DISABLE_AUTO_UPDATE=true
 
 unsetopt BEEP
 
