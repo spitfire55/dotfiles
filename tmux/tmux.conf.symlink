@@ -2,7 +2,7 @@ set -g default-command "${SHELL}"
 set -g default-terminal "tmux-256color"
 set-option -g default-shell /bin/zsh
 unbind C-b
-set-option -g prefix C-\
+set-option -g prefix C-a
 bind-key C-a send-prefix
 set -s focus-events on
 set -sg escape-time 10
