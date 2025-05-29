@@ -52,7 +52,7 @@ export BAT_THEME="kanagawa"
 # Sets GOROOT, GOPATH, and GOBIN
  . ~/.asdf/plugins/golang/set-env.zsh
 
- export PATH=$PATH:$HOME/.local/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin:/opt/nvim/bin:/opt/zig:$GOBIN
+ export PATH=$PATH:$HOME/.local/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin:/opt/nvim/bin:/opt/zig:$GOBIN:$GOPATH/bin
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	export PATH=$PATH:/opt/homebrew/bin:$HOME/dev/lua5.1/bin:/opt/homebrew/opt/llvm/bin
