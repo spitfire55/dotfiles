@@ -1,4 +1,4 @@
-if [[ -z ${TMUX+X}${ZSH_SCRIPT+X}${ZSH_EXECUTION_STRING+X} && -v commands[tmux] ]]; then
+if [[ -z ${TMUX+X}${ZSH_SCRIPT+X}${ZSH_EXECUTION_STRING+X} && -v commands[tmux] && -z "$SSH_CONNECTION" ]]; then
   exec tmux
 fi
 
@@ -50,9 +50,10 @@ export NPM_PACKAGES="$HOME/.npm-packages"
 export BAT_THEME="kanagawa"
 
 # Sets GOROOT, GOPATH, and GOBIN
- . ~/.asdf/plugins/golang/set-env.zsh
+ export GOBIN=$HOME/go/bin
 
- export PATH=$PATH:$HOME/.local/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin:/opt/nvim/bin:/opt/zig:$GOBIN:$GOPATH/bin
+ export PATH=$HOME/.asdf/shims:$HOME/.local/bin:$NPM_PACKAGES/bin:$HOME/.cargo/bin:/opt/nvim/bin:/opt/zig:$GOBIN:$GOPATH/bin:$PATH
+ . ~/.asdf/plugins/golang/set-env.zsh
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	export PATH=$PATH:/opt/homebrew/bin:$HOME/dev/lua5.1/bin:/opt/homebrew/opt/llvm/bin
